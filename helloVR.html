@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <!--import star system-->
+    <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
+
+    <script src="https://unpkg.com/aframe-audioanalyser-component@^3.0.3/dist/aframe-audioanalyser-component.min.js"></script>
+
+    <!--<script src="https://unpkg.com/aframe-physics-system@1.4.0/dist/aframe-physics-system.min.js"></script>-->
+  </head>
+  <body>
+    <<!--h1>Virtual Reality Demo</h1>-->
+
+  <audio autoplay>
+    <source src="trial_song.mp3" type="audio/mp3">
+  </audio>
+
+    <a-scene>
+      <a-entity position="1 0 -3">
+        <a-camera></a-camera>
+      </a-entity>
+      <a-sky color="#000000 "></a-sky>
+      <a-box position="-1 0 -3" rotation="0 45 0" color="#4CC3D9" static-body></a-box>
+
+      <a-entity star-system></a-entity>
+
+      <a-assets>
+        <audio id="song" src="trial_song.mp3" preload="auto"></audio>
+      </a-assets>
+      <a-entity sound="src: #song"></a-entity>
+
+      <a-ring position="1 -0.5 -3" rotation="-90 0 0" color="#4CC3D9" radius-inner="1" radius-outer="1.5" static-body></a-ring>
+      <a-ring position="1 -0.5 -3" rotation="-90 0 0" color="teal" radius-inner="2" radius-outer="2.5" static-body></a-ring>
+      <a-ring position="1 -0.5 -3" rotation="-90 0 0" color="purple" radius-inner="3" radius-outer="3.5" static-body></a-ring>
+      <a-ring id="top_ring" position="1 -0.5 -3" rotation="90 0 0" color="red" radius-inner="0.25" radius-outer="0.5" material="side: double" static-body></a-ring>
+
+
+
+    </a-scene>
+
+    <script src="helloVR.js"></script>
+    <audio controls>
+        <source src="trial_song.mp3" type="audio/mpeg">
+    </audio>
+  </body>
+</html>
